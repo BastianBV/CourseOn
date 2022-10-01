@@ -1,0 +1,103 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  position:relative;
+  color:#fff;
+}
+.typeWrap{
+
+  animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+}
+.line{
+    // position:relative;
+  width: 11em;
+  margin:auto;
+  border-right: 2px solid #4AD06F;
+  font-size: 60px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(10%);
+}
+@keyframes typewriter {
+  from{
+    width: 0;
+  }
+  to{
+    width: 11em;
+  }
+}
+@keyframes blinkTextCursor {
+  from{
+    border-right-color: #4AD06F;
+  }
+  to{
+    border-right:transparent;
+    
+  }
+}
+//! Landing Effect Letter slash
+
+// .landingEff {
+//   color: #fff;
+//   font-size: 60px;
+//   font-weight: 400;
+//   list-style: none;
+//   position: relative;
+// }
+// .landingEff::after {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   height: 60px;
+//   width: 100%;
+//   background-color: #282c34;
+//   border-left: 3px solid rgba(28, 136, 28, 0.493);
+//   animation: typing 6s steps(21) backwards;
+
+// }
+// @keyframes typing {
+//   0% {
+
+//   }
+//   100% {
+//     margin: 0 -35px 0 35px;
+//     left: 100%;
+//   }
+// }
+
+
+//! Landing Effect GreenLetter 
+// .landingEff {
+//   position: relative;
+//   font-size: 7vw;
+//   color: #282c34;
+//   -webkit-text-stroke: 0.3vw #424449;
+//   text-transform: uppercase;
+// }
+// .landingEff::before {
+//   content: attr(data-text);
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 0;
+//   height: 100%;
+//   color: #4ad06f;
+//   -webkit-text-stroke: 0vw #424449;
+//   border-right: 2px solid #4ad06f;
+//   overflow: hidden;
+//   animation: animate 9s linear infinite;
+// }
+// @keyframes animate {
+//   0%,
+//   10% {
+//     width: 0;
+//   }
+//   70%,
+//   90%,
+//   100% {
+//     width: 100%;
+//   }
+// }
+
+
