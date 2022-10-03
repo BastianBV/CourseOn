@@ -1,18 +1,26 @@
 .wrapper {
   display: inline-flex;
   flex-direction: column;
-  position:relative;
-  color:#fff;
+  position: relative;
+  color: #fff;
+  font-size: 50px;
+  margin-top: 50px;
 }
-.typeWrap{
-
-  animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+@media (max-width: 425px) {
+  .wrapper {
+    font-size: 30px;
+    margin-top: 30px;
+  }
 }
-.line{
-    // position:relative;
+.typeWrap {
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+.line {
+  // position:relative;
   width: 11em;
-  margin:auto;
-  border-right: 2px solid #4AD06F;
+  margin: auto;
+  border-right: 2px solid #4ad06f;
   font-size: 60px;
   text-align: center;
   white-space: nowrap;
@@ -20,20 +28,19 @@
   transform: translateY(10%);
 }
 @keyframes typewriter {
-  from{
+  from {
     width: 0;
   }
-  to{
+  to {
     width: 11em;
   }
 }
 @keyframes blinkTextCursor {
-  from{
-    border-right-color: #4AD06F;
+  from {
+    border-right-color: #4ad06f;
   }
-  to{
-    border-right:transparent;
-    
+  to {
+    border-right: transparent;
   }
 }
 //! Landing Effect Letter slash
@@ -66,8 +73,7 @@
 //   }
 // }
 
-
-//! Landing Effect GreenLetter 
+//! Landing Effect GreenLetter
 // .landingEff {
 //   position: relative;
 //   font-size: 7vw;
@@ -99,5 +105,3 @@
 //     width: 100%;
 //   }
 // }
-
-
