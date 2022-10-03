@@ -6,6 +6,11 @@ import Typography from "@mui/material/Typography";
 import styles from "../Cards/cards.module.scss";
 import { styled, createTheme } from "@mui/material/styles";
 import { blueGrey, green } from "@mui/material/colors";
+import CardMedia from '@mui/material/CardMedia';
+import inferfaz from '../../images/interfaz.jpg'
+import comunidad from '../../images/comunidad.jpg'
+import preferencias from '../../images/preferencias.jpg'
+import crea from '../../images/crea.png'
 
 const customTheme = createTheme({
   palette: {
@@ -47,13 +52,19 @@ const bull = (
 
 const Cards = () => {
   return (
-    <>
+    <div className={`${styles.containerCards}`}>
       <StyledCard>
         <Card
-          sx={{ minWidth: 275 }}
+          sx={{ maxWidth:400 }}
           theme={customTheme}
           className={`${styles.card}`}
         >
+           <CardMedia
+          component="img"
+          height="140"
+          image={`${inferfaz}`}
+          alt=""
+        />
           <CardContent>
             <Typography sx={{ fontSize: 20 }} color="text.primary" gutterBottom>
               Disfruta de una gran interfaz
@@ -71,10 +82,16 @@ const Cards = () => {
       </StyledCard>
       <StyledCard>
         <Card
-          sx={{ minWidth: 100 }}
+          sx={{ maxWidth: 300}}
           theme={customTheme}
           className={`${styles.card}`}
         >
+          <CardMedia
+          component="img"
+          height="140"
+          image={`${comunidad}`}
+          alt=""
+        />
           <CardContent>
             <Typography sx={{ fontSize: 20 }} color="text.primary" gutterBottom>
               Creando una comunidad
@@ -87,7 +104,51 @@ const Cards = () => {
           </CardContent>
         </Card>
       </StyledCard>
-    </>
+      <StyledCard>
+        <Card sx={{ maxWidth: 300 }}
+          theme={customTheme}
+          className={`${styles.card}`}>
+             <CardMedia
+          component="img"
+          height="140"
+          image={`${preferencias}`}
+          alt=""
+        />
+          <CardContent>
+          <Typography sx={{ fontSize: 20 }} color="text.primary" gutterBottom>
+         Aqui encontras lo que se ajuste a tu preferencia
+            </Typography>
+            <Typography variant="body2">
+              Entra a un mundo de posibilidades 
+              <br />
+              {'"La vida es un misterio; la luz ciega y la verad inaccesible asombra"'}
+            </Typography>
+          </CardContent>
+        </Card>
+      </StyledCard>
+      <StyledCard>
+        <Card sx={{ maxWidth: 300 }}
+          theme={customTheme}
+          className={`${styles.card}`}>
+             <CardMedia
+          component="img"
+          height="140"
+          image={`${crea}`}
+          alt=""
+        />
+            <CardContent>
+            <Typography sx={{ fontSize: 20 }} color="text.primary" gutterBottom>
+            Crea lo que imagines
+            </Typography>
+            <Typography variant="body2">
+              El limite lo pones tu 
+              <br />
+              {'"Existe un lenguaje que va más allá de las palabras"'}
+            </Typography>
+            </CardContent>
+        </Card>
+      </StyledCard>
+    </div>
   );
 };
 
