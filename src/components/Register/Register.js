@@ -18,7 +18,7 @@ const Register = () => {
       <h6 className={`${styles.h6}`}>
       Al registrarse aceptas nuestros terminos de uso y politicas de privacidad.
       </h6>
-      <h5 className={`${styles.h5}`}>COURSE-ON</h5>
+      <h5 className={`${styles.h5}`}>COURSE-ON.</h5>
     </>
   );
 };
