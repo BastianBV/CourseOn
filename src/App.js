@@ -1,13 +1,19 @@
 import './App.css';
-import Landing from './components/Landing/Landing';
-import Logo from './components/Logo/Logo'
+import Navbar from './components/Navbar/Navbar';
+import LoginApp from './components/LoginWithApp/LoginApp';
+// import Landing from './components/Landing/Landing';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 
 function App() {
   return (
     <div className="App">
-      <Logo/>
-      <Landing/>
+      <Navbar/>
+      {/* <LoginApp/> */}
+      {/* <Register/> */}
+      {/* <Login/> */}
+      {/* <Landing/> */}
     </div>
   );
 }

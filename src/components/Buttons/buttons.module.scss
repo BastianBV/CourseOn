@@ -1,0 +1,78 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.buttonSesion {
+  margin-top: 90px !important;
+  box-shadow: 0px 6px #149376 !important;
+  border-color: #1ccece !important;
+  color: #fff !important;
+  height: 50px;
+  font-size: medium;
+  font-weight: bold;
+  text-shadow: 0px 2px rgb(0, 0, 0);
+}
+
+.buttonSesion:hover {
+  background-color: #1ee498 !important;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.buttonSesion:active {
+  transform: translateY(-1px);
+}
+
+.buttonGoogle {
+  margin-top: 30px !important;
+  box-shadow: 0px 6px #149376 !important;
+  border-color: #1ccece !important;
+  color: #fff !important;
+  height: 50px;
+  font-size: small;
+  text-shadow: 0px 2px rgb(0, 0, 0);
+}
+.buttonGoogle:hover {
+  background-color: #1ee498 !important;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.buttonGoogle:active {
+  transform: translateY(-1px);
+}
+
+.buttonMicrosoft {
+  margin-top: 30px !important;
+  box-shadow: 0px 6px #149376 !important;
+  border-color: #1ccece !important;
+  color: #fff !important;
+  height: 50px;
+  font-size: small;
+  text-shadow: 0px 2px rgb(0, 0, 0);
+}
+.buttonMicrosoft:hover {
+  background-color: #1ee498 !important;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.buttonMicrosoft:active {
+  transform: translateY(-1px);
+}
+.letterEdit{
+  color:#fff;
+  margin-bottom:0;
+}
+.count{
+  color:#fff;
+  margin-bottom:0;
+}
+.register{
+  color:#149376;
+  margin-bottom:0;
+}

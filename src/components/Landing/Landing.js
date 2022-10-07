@@ -2,10 +2,13 @@ import React from "react";
 import styles from "../Landing/landing.module.scss";
 import Cards from "./Cards/Cards";
 import Typical from 'react-typical'
+import Logo from '../Logo/Logo'
+
 const Landing = () => {
 
   return (
     <>
+      <Logo/>
       <div className={`${styles.wrapper}`}>
         {/* <span className={`${styles.typeWrap} ${styles.line}`}>Bienvenido a courseOn</span> */}
         <Typical
