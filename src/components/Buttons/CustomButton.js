@@ -1,12 +1,13 @@
 import React from 'react'
 import { Button } from "@mui/material";
 import styles from '../Buttons/buttons.module.scss'
-const Github = () => {
+
+const CustomButton = ({text,className}) => {
   return (
     <div className={`${styles.container}`}>
-      <Button variant="outlined" className={`${styles.buttonMicrosoft}`}>Github</Button>
+          <Button variant="outlined" className={`${styles[className]}`}>{text}</Button>
     </div>
   )
 }
 
-export default Github
+export default CustomButton

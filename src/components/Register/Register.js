@@ -1,18 +1,15 @@
 import React from "react";
-import Email from "../Inputs/Email";
-import Name from "../Inputs/Name";
-import Password from "../Inputs/Password";
-import PasswordConfirm from "../Inputs/PasswordConfirm";
+import CustomInput from "../Inputs/CustomInput";
 import Logo from "../Logo/Logo";
 import styles from "../Register/register.module.scss";
 const Register = () => {
   return (
     <>
       <Logo />
-      <Name/>
-      <Email/>
-      <Password/>
-      <PasswordConfirm/>
+      <CustomInput text='Nombre'/>
+      <CustomInput text='Correo'/>
+      <CustomInput text='Contraseña'/>
+      <CustomInput text='Confirmar Contraseña'/>
       <h5 className={`${styles.h5}`}>¿Ya tienes una cuenta?</h5>
       <h5 className={`${styles.h5}`}>Inicia Sesión</h5>
       <h6 className={`${styles.h6}`}>

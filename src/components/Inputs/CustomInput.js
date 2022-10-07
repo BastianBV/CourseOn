@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../Inputs/inputs.module.scss'
-const Email = () => {
+
+const CustomInput = ({text}) => {
   return (
     <div className={`${styles.inputGroup}`}>
         <input
@@ -10,9 +11,9 @@ const Email = () => {
           autocomplete="off"
           className={`${styles.inputEf}`}
         />
-        <label className={`${styles.userLabel}`}>E-mail</label>
-      </div>
+        <label className={`${styles.userLabel}`}>{text}</label>
+    </div>
   )
 }
 
-export default Email
+export default CustomInput
