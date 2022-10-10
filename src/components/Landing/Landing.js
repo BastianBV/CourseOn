@@ -3,13 +3,14 @@ import styles from "../Landing/landing.module.scss";
 import Cards from "./Cards/Cards";
 import Typical from 'react-typical'
 import Logo from '../Logo/Logo'
-
+import Grid from '@mui/material/Grid';
 const Landing = () => {
 
   return (
     <>
       <Logo/>
       <div className={`${styles.wrapper}`}>
+
         {/* <span className={`${styles.typeWrap} ${styles.line}`}>Bienvenido a courseOn</span> */}
         <Typical
         loop={Infinity}
@@ -26,7 +27,7 @@ const Landing = () => {
           'Aprende',
           1000,
           'Crea...',
-          1000
+          2000
         ]}/>
       </div>
       <Cards/>

@@ -1,15 +1,16 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
 import LoginApp from './components/LoginWithApp/LoginApp';
-// import Landing from './components/Landing/Landing';
+import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-
+import CarouselImage from './components/CarouselImage/CarouselImage';
+import PrincipalPage from './components/PrincipalPage/PrincipalPage';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+     <PrincipalPage/>
+      {/* <CarouselImage/> */}
       {/* <LoginApp/> */}
       {/* <Register/> */}
       {/* <Login/> */}
