@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import Register from '../Register/Register';
 import Logo from "../Logo/Logo"; 
 import styles from '../Buttons/buttons.module.scss'
 import CustomButton from '../Buttons/CustomButton'
@@ -11,7 +13,7 @@ const Login = () => {
       <CustomButton text='Google' className='buttonGoogle'/>
       <CustomButton text='Github' className='buttonMicrosoft'/>
       <h5 className={`${styles.count}`}>¿No tienes cuenta?</h5>
-      <h5 className={`${styles.register}`}>Regístrate</h5>
+      <Link to='/register'>Regístrate</Link>
     </div>
   );
 };

@@ -10,6 +10,10 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import InputSearch from './InputSearch/InputSearch';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
+import { Outlet } from 'react-router-dom'
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -25,7 +29,7 @@ const Navbar = () => {
     <>
     <AppBar position='fixed' color='primary' sx={{display:'flex'}}>
       <Toolbar sx={{justifyContent:'space-between'}} >
-        <Typography variant='h6'>
+        <Typography variant='h6' sx={{'@media (min-with:768px)':{display:{xs:'none',md: 'flex'}}}}>
           COURSE-ON
         </Typography>
         <InputSearch/>
@@ -89,21 +93,19 @@ const Navbar = () => {
         <Divider />
         <MenuItem>
           <ListItemIcon>
-            {/* //aqui va un icono user */}
+          <PersonAdd fontSize="small" />
           </ListItemIcon>
           Add another account
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            {/* //aqui va un icono user */}
-            
+          <Settings fontSize="small" />  
           </ListItemIcon>
           Settings
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            {/* //aqui va un icono user */}
-            
+          <Logout fontSize="small" /> 
           </ListItemIcon>
           Logout
         </MenuItem>
@@ -111,6 +113,7 @@ const Navbar = () => {
     </Fragment>
       </Toolbar>
     </AppBar>
+    <Outlet/>
     </>
   )
 }
