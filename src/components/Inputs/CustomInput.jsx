@@ -8,7 +8,7 @@ const CustomInput = ({text, type}) => {
           required="required"
           type={type}
           name="text"
-          autocomplete="off"
+          autoComplete="off"
           className={`${styles.inputEf}`}
         />
         <label className={`${styles.userLabel}`}>{text}</label>

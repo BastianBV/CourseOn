@@ -25,6 +25,7 @@ const customTheme = createTheme({
 const StyledCard = styled(Card)`
   ${({ theme }) => `
     cursor: pointer;
+    
     background-color: ${theme.palette.success.dark};
     transition: ${theme.transitions.create(["background-color", "transform"], {
       duration: theme.transitions.duration.standard,
@@ -50,13 +51,13 @@ const Cards = () => {
     <div >
       <Grid container>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard>   
+          <StyledCard sx={{maxWidth:400, maxHeight:250, ml:10, mt:10, '@media (max-width: 768px)':{width:300, height:200, ml:1, mt:3} }}>   
         <Card
             sx={{
               maxWidth: 400,
               backgroundColor: "9ea9b1",
               opacity: 0.7,
-              height: 290,
+              height: 250,
             }}
             theme={customTheme}
           >
@@ -74,26 +75,19 @@ const Cards = () => {
               >
                 Disfruta de una gran interfaz
               </Typography>
-              <Typography variant="h7" component="div">
-                Aprende{bull}Crea{bull}Comparte
-              </Typography>
-              <Typography variant="h9">Aqui es donde comienza todo</Typography>
-              <Typography variant="caption">
-                <br />
-                ¡Se parte de lo que te ofrece CourseOn!
-              </Typography>
+              <Typography variant="caption">¡Aqui es donde comienza todo!</Typography>
             </CardContent>
           </Card>   
         </StyledCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard>
+          <StyledCard sx={{maxWidth:400, maxHeight:250, ml:25, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2}}}>
           <Card
             sx={{
               maxWidth: 400,
               backgroundColor: "9ea9b1",
               opacity: 0.7,
-              height: 290,
+              height: 250,
             }}
             theme={customTheme}
           >
@@ -123,7 +117,7 @@ const Cards = () => {
         </StyledCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard>
+          <StyledCard sx={{maxWidth:400, maxHeight:200, ml:10, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2}}}>
           <Card
             sx={{
               maxWidth: 400,
@@ -160,7 +154,7 @@ const Cards = () => {
         </StyledCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard>
+          <StyledCard sx={{maxWidth:400, maxHeight:200, ml:25, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2 }}}>
           <Card
             sx={{
               maxWidth: 400,
@@ -173,17 +167,14 @@ const Cards = () => {
             <CardMedia component="img" height="140" image={`${crea}`} alt="" />
             <CardContent>
               <Typography
-                sx={{ fontSize: 20 }}
+                sx={{ fontSize: 17 }}
                 color="text.primary"
                 gutterBottom
               >
                 Crea lo que imagines
               </Typography>
-              <Typography variant="h7">El limite lo pones tu</Typography>
-              <Typography variant="caption">
-                <br />
-                "Existe un lenguaje que va más allá de las palabras"
-              </Typography>
+              <Typography variant="caption">El limite lo pones tu</Typography>
+              
             </CardContent>
           </Card>
         </StyledCard>
