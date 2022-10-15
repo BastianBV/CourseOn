@@ -6,10 +6,10 @@ const Register = () => {
   return (
     <>
       <Logo />
-      <CustomInput text='Nombre'/>
-      <CustomInput text='Correo'/>
-      <CustomInput text='Contraseña'/>
-      <CustomInput text='Confirmar Contraseña'/>
+      <CustomInput text='Nombre' type='text'/>
+      <CustomInput text='Correo' type='text'/>
+      <CustomInput text='Contraseña' type='password'/>
+      <CustomInput text='Confirmar Contraseña' type='password'/>
       <h5 className={`${styles.h5}`}>¿Ya tienes una cuenta?</h5>
       <h5 className={`${styles.h5}`}>Inicia Sesión</h5>
       <h6 className={`${styles.h6}`}>
