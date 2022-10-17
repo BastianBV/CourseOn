@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from '../Inputs/inputs.module.scss'
 
-const CustomInput = ({text, type}) => {
+const CustomInput = ({text, type, onChange, name}) => {
   return (
     <div className={`${styles.inputGroup}`}>
         <input
+          onChange={onChange}
           required="required"
           type={type}
-          name="text"
+          name={name}
           autoComplete="off"
           className={`${styles.inputEf}`}
         />

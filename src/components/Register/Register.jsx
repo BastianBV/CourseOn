@@ -6,6 +6,7 @@ import CustomButton from "../Buttons/CustomButton";
 import styles from "../Register/register.module.scss";
 import Paper from "@mui/material/Paper";
 import Alert from '@mui/material/Alert';
+import { Box } from "@mui/system";
 
 
 const Register = () => {
@@ -13,12 +14,17 @@ const Register = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = createAccount(values.name, values.email, values.password);
-    console.log("createAccount", result);
-    if (!result) setError("Error al iniciar Sesión");
-    navigate("/login");
+    
+    try{
+      const result = await createAccount(values.name, values.email, values.password);
+      console.log("createAccount", result);
+      if (!result) setError("Error al iniciar Sesión");
+      navigate("/login");
+    }catch(error){
+        console.log(error)
+    }
   };
 
   const handleChange = (e) =>
@@ -29,16 +35,17 @@ const Register = () => {
       {error && <Alert variant="outlined" severity="error">
       Error al registrarse
       </Alert>}
-      <form>
+      <Box>
       <Paper
         elevation={3}
         sx={{ background: "#282c34", height: 350, p: 5, opacity: 0.5 }}
       >
-        <CustomInput text="Nombre" type="text" onChange={handleChange} />
-        <CustomInput text="Correo" type="text" onChange={handleChange} />
+        <CustomInput text="Nombre" type="text" name={"name"} onChange={handleChange} />
+        <CustomInput text="Correo" type="text" name={"email"} onChange={handleChange} />
         <CustomInput
           text="Contraseña"
           type="password"
+          name={"password"}
           onChange={handleChange}
         />
         <CustomInput
@@ -47,13 +54,13 @@ const Register = () => {
           onChange={handleChange}
         />
         <CustomButton
-          type='submit'
+          type='button'
           text="Continuar"
           className="buttonMicrosoft"
           onClick={handleSubmit}
         />
       </Paper>
-      </form>
+      </Box>
 
       <h5 className={`${styles.h5}`}>¿Ya tienes una cuenta?</h5>
       <Link to='/loginApp' className={`${styles.h5}`}>
