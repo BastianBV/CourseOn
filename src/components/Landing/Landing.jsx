@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../Landing/landing.module.scss";
 import Cards from "./Cards/Cards";
-import Typical from 'react-typical'
+// import Typical from 'react-typical'
 import Logo from '../Logo/Logo'
 import Grid from '@mui/material/Grid';
 const Landing = () => {
@@ -12,7 +12,7 @@ const Landing = () => {
       <div className={`${styles.wrapper}`}>
 
         {/* <span className={`${styles.typeWrap} ${styles.line}`}>Bienvenido a courseOn</span> */}
-        <Typical
+        {/* <Typical
         loop={Infinity}
         wrapper="b"
         steps={[
@@ -28,7 +28,7 @@ const Landing = () => {
           1000,
           'Crea...',
           2000
-        ]}/>
+        ]}/> */}
       </div>
       <Cards/>
     </>
