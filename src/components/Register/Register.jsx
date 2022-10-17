@@ -13,12 +13,16 @@ const Register = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = createAccount(values.name, values.email, values.password);
-    console.log("createAccount", result);
-    if (!result) setError("Error al iniciar Sesión");
-    navigate("/login");
+    try{
+      const result = await createAccount(values.name, values.email, values.password);
+     
+      if (!result) setError("Error al iniciar Sesión");
+      navigate("/loginApp");
+    }catch(err){
+      console.log('err', err)
+    }
   };
 
   const handleChange = (e) =>
@@ -34,16 +38,18 @@ const Register = () => {
         elevation={3}
         sx={{ background: "#282c34", height: 350, p: 5, opacity: 0.5 }}
       >
-        <CustomInput text="Nombre" type="text" onChange={handleChange} />
-        <CustomInput text="Correo" type="text" onChange={handleChange} />
+        <CustomInput text="Nombre" type="text" name="name" onChange={handleChange} />
+        <CustomInput text="Correo" type="text" name="email" onChange={handleChange} />
         <CustomInput
           text="Contraseña"
           type="password"
+          name="password"
           onChange={handleChange}
         />
         <CustomInput
           text="Confirmar Contraseña"
           type="password"
+          name="password"
           onChange={handleChange}
         />
         <CustomButton

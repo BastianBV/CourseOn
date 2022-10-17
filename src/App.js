@@ -10,17 +10,9 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      {/* <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />}>
-        <Route path="/profile" element={<Profile />}/>
-        </Route>
-      </Routes>
-      </BrowserRouter> */}
-     {/* <Profile /> */}
-     {/* <Home /> */}
-      {/* <CarouselImage /> */}
-      {/* <LoginApp /> */}
+    
+      {/* <Profile /> */}
+     
       <BrowserRouter>
       <Routes>
       <Route path='/bienvenido' element={<Landing />}/>

@@ -15,9 +15,9 @@ const LoginApp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("values", values);
+    
     const result = await loginAccount(values.email, values.password);
-    console.log("result", result);
+    
     if (!result.success) setError("Error al iniciar Sesión");
 
     localStorage.setItem("token", result.data.token);
@@ -36,8 +36,8 @@ const LoginApp = () => {
         elevation={3}
         sx={{ background: "#282c34", height: 300, p: 5, opacity: 0.5 }}
       >
-        <CustomInput text="Correo" onChange={handleChange} />
-        <CustomInput text="Contraseña" onChange={handleChange} />
+        <CustomInput text="Correo" type='text' name='email' onChange={handleChange} />
+        <CustomInput text="Contraseña" type='password' name='password' onChange={handleChange} />
         <CustomButton
           text="Inicia Sesión"
           className="buttonSesion"
