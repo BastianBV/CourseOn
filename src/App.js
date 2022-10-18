@@ -7,20 +7,10 @@ import CarouselImage from './components/CarouselImage/CarouselImage';
 import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import CreateCourse from './components/CreateCourse/CreateCourse';
 function App() {
   return (
-    <div className="App">
-      {/* <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />}>
-        <Route path="/profile" element={<Profile />}/>
-        </Route>
-      </Routes>
-      </BrowserRouter> */}
-     {/* <Profile /> */}
-     {/* <Home /> */}
-      {/* <CarouselImage /> */}
-      {/* <LoginApp /> */}
+    <div className="App">   
       <BrowserRouter>
       <Routes>
       <Route path='/bienvenido' element={<Landing />}/>
@@ -28,10 +18,10 @@ function App() {
       <Route path='/register' element={<Register />}/>
       <Route path='/loginApp' element={<LoginApp />}/>
       <Route path='/' element={<Home />}/>
+      <Route path='/profile' element={<Profile />}/>
+      <Route path='/create' element={<CreateCourse />}/>
       </Routes>
       </BrowserRouter>
-      {/* <Login /> */}
-      {/* <Landing /> */}
     </div>
   );
 }

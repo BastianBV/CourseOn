@@ -14,14 +14,14 @@ const Register = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async  (e) => {
     e.preventDefault();
     
     try{
       const result = await createAccount(values.name, values.email, values.password);
       console.log("createAccount", result);
       if (!result) setError("Error al iniciar Sesión");
-      navigate("/login");
+      navigate("/loginApp");
     }catch(error){
         console.log(error)
     }
@@ -51,6 +51,7 @@ const Register = () => {
         <CustomInput
           text="Confirmar Contraseña"
           type="password"
+          name={"password"}
           onChange={handleChange}
         />
         <CustomButton
