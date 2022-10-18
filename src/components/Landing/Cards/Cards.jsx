@@ -7,10 +7,10 @@ import styles from "../Cards/cards.module.scss";
 import { styled, createTheme } from "@mui/material/styles";
 import { blueGrey, green } from "@mui/material/colors";
 import CardMedia from "@mui/material/CardMedia";
-import inferfaz from "../../images/interfaz.jpg";
-import comunidad from "../../images/comunidad.jpg";
-import preferencias from "../../images/preferencias.jpg";
-import crea from "../../images/crea.png";
+import inferface from "../../../assets/images/interface.jpg";
+import community from "../../../assets/images/community.jpg";
+import topics from "../../../assets/images/topics.jpg";
+import create from "../../../assets/images/create.png";
 import Grid from '@mui/material/Grid';
 
 
@@ -64,7 +64,7 @@ const Cards = () => {
             <CardMedia
               component="img"
               height="140"
-              image={`${inferfaz}`}
+              image={`${inferface}`}
               alt=""
             />
             <CardContent>
@@ -94,7 +94,7 @@ const Cards = () => {
             <CardMedia
               component="img"
               height="140"
-              image={`${comunidad}`}
+              image={`${community}`}
               alt=""
             />
             <CardContent>
@@ -130,7 +130,7 @@ const Cards = () => {
             <CardMedia
               component="img"
               height="140"
-              image={`${preferencias}`}
+              image={`${topics}`}
               alt=""
             />
             <CardContent>
@@ -164,7 +164,7 @@ const Cards = () => {
             }}
             theme={customTheme}
           >
-            <CardMedia component="img" height="140" image={`${crea}`} alt="" />
+            <CardMedia component="img" height="140" image={`${create}`} alt="" />
             <CardContent>
               <Typography
                 sx={{ fontSize: 17 }}
