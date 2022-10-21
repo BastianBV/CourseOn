@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import styles from "../LoginWithApp/loginApp.module.scss";
 import CustomButton from "../Buttons/CustomButton";
 import CustomInput from "../Inputs/CustomInput";
 import { loginAccount } from "../../services/login";
