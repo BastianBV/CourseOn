@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material'
 import {React, useState, Fragment} from 'react'
+import { Link } from 'react-router-dom'
 import styles from '../Navbar/navbar.module.scss'
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -85,10 +86,7 @@ const Navbar = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem>
-          <Avatar /> My account
+          <Avatar /> <Link to='/profile'>Profile</Link>
         </MenuItem>
         <Divider />
         <MenuItem>
@@ -101,7 +99,7 @@ const Navbar = () => {
           <ListItemIcon>
           <Settings fontSize="small" />  
           </ListItemIcon>
-          Settings
+          <Link to='/settings'> Settings</Link>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>

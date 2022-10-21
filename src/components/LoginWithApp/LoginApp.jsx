@@ -30,7 +30,7 @@ const LoginApp = () => {
   const handleChange = (e) =>
     setValues({ ...values, [e.target.name]: e.target.value });
   return (
-    <>
+    <form>
       <Logo />
       {error && (
         <Alert variant="outlined" severity="error">
@@ -41,8 +41,8 @@ const LoginApp = () => {
         elevation={3}
         sx={{ background: "#282c34", height: 300, p: 5, opacity: 0.5 }}
       >
-        <CustomInput text="Correo"  onChange={handleChange} />
-        <CustomInput text="Contraseña" onChange={handleChange} />
+        <CustomInput text="Correo" name={"email"}  onChange={handleChange} />
+        <CustomInput text="Contraseña" name={"password"} onChange={handleChange} />
         <CustomButton
           text="Inicia Sesión"
           className="buttonSesion"
@@ -50,7 +50,8 @@ const LoginApp = () => {
           onClick={handleSubmit}
         />
       </Paper>
-    </>
+    </form>
+    
   );
 };
 
