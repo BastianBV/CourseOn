@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import CreateCourse from './components/CreateCourse/CreateCourse';
+import DropImage from './components/DropzoneImage/DropImage';
 function App() {
   return (
     <div className="App">   
