@@ -49,9 +49,9 @@ const bull = (
 const Cards = () => {
   return (
     <div >
-      <Grid container>
+      <Grid container sx={{p:20, mb:50}}>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard sx={{maxWidth:400, maxHeight:250, ml:10, mt:10, '@media (max-width: 768px)':{width:300, height:200, ml:1, mt:3} }}>   
+          <StyledCard sx={{maxWidth:400, maxHeight:250, mt:10, '@media (max-width: 768px)':{width:300, height:200, ml:1, mt:3} }}>   
         <Card
             sx={{
               maxWidth: 400,
@@ -81,7 +81,7 @@ const Cards = () => {
         </StyledCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard sx={{maxWidth:400, maxHeight:250, ml:25, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2}}}>
+          <StyledCard sx={{maxWidth:400, maxHeight:250, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2}}}>
           <Card
             sx={{
               maxWidth: 400,
@@ -117,7 +117,7 @@ const Cards = () => {
         </StyledCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard sx={{maxWidth:400, maxHeight:200, ml:10, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2}}}>
+          <StyledCard sx={{maxWidth:400, maxHeight:200, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2}}}>
           <Card
             sx={{
               maxWidth: 400,
@@ -154,7 +154,7 @@ const Cards = () => {
         </StyledCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <StyledCard sx={{maxWidth:400, maxHeight:200, ml:25, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2 }}}>
+          <StyledCard sx={{maxWidth:400, maxHeight:200, mt:10, '@media (max-width: 768px)':{width:300,height:200, ml:1, mt:2 }}}>
           <Card
             sx={{
               maxWidth: 400,
