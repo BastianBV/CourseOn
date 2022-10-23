@@ -1,5 +1,6 @@
 .inputGroup {
   position: relative;
+  width:307px;
 }
 
 .inputEf {
@@ -35,4 +36,13 @@ input:valid ~ label {
   background-color: #282c34;
   padding: 0 0.2em;
   color: #2196f3;
+}
+
+@media (max-width:768px){
+  .inputGroup{
+    width:221px;
+  }
+  .inputEf{
+    width:185px;
+  }
 }

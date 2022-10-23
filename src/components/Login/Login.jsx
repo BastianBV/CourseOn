@@ -55,8 +55,8 @@ const Login = () => {
       <Logo />
     <Link to='/loginApp'><CustomButton text='Inicia Sesión' className='buttonSesion'/> </Link>  
         <h4 className={`${styles.letterEdit}`}>Ingresa a través de </h4>
-      <div id="signInDiv"></div> 
-      <CustomButton text='SIGN IN WITH GOOGLE' className='buttonGoogle'/>
+      
+      <CustomButton text='SIGN IN WITH GOOGLE' className='buttonGoogle' id="signInDiv"> <div id="signInDiv"></div> </CustomButton>
       <h5 className={`${styles.count}`}>¿No tienes cuenta?</h5>
       <Link to='/register'>Regístrate</Link>
     </div>

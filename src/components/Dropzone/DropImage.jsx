@@ -6,8 +6,8 @@ const DropImage = ({ type, name, accept, onChange, ImagePrevious }) => {
   return (
     <>
       <Stack>
-      <Button variant="contained"  startIcon={<UploadIcon />} component="label">
-      Sube Una imagen
+      <Button variant="contained"  startIcon={<UploadIcon />} component="label" sx={{mt:2,mb:1}}>
+      Sube una imagen
       <input hidden accept="image/*" type="file" onChange={onChange} />
       </Button>
       </Stack>
