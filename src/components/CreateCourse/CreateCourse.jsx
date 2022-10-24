@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import CustomButton from "../Buttons/CustomButton";
 import CustomInput from "../Inputs/CustomInput";
@@ -9,12 +10,30 @@ import DropFile from "../Dropzone/DropFile";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 import ModalUrl from '../Modal/ModalUrl'
+import { create } from '../../services/create'
 
 const CreateCourse = () => {
   const [ImagePrevious, setImagesPrevious] = useState(null);
   const [ImageStates, setImageStates] = useState(null);
   const [FilesStates, setFilesStates] = useState(null);
+  const [values, setValues] = useState();
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    try{
+      const result = await create(values.title, values.course , values.unitName);
+      console.log("createAccount", result);
+      if (!result) setError("Error al crear contenido");
+      navigate("/");
+    }catch(error){
+      console.log(error)
+    }
+  }
+  const handleChange = (e) => {
+    setValues({...values, [e.target.name]: e.target.values });
+  }
   const imageChange = (e) => {
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
@@ -54,7 +73,7 @@ const CreateCourse = () => {
           "@media (min-width: 768px)": { width: 759, height: 250, top: 0 },
         }}
       />
-      <DropImage onChange={changeImage} ImagePrevious={ImagePrevious} />
+      <DropImage onChange={changeImage} ImagePrevious={ImagePrevious} name='bannerImage'/>
       <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
         Agrega una imagen para tu miniatura
       </Typography>
@@ -95,7 +114,7 @@ const CreateCourse = () => {
               <CustomInput
                 text="Descripcion del curso"
                 type="text"
-                name={"courseDescription"}
+                name={"unitName"}
                 style={{ height: 200, maxWidth: 276, minWidth: 186 }}
               />
             </Grid>
@@ -133,8 +152,9 @@ const CreateCourse = () => {
       <div>
         <CustomButton
           text="Guardar Cambios"
-          type="button"
+          type="submit"
           className="buttonGoogle"
+          onChange={handleSubmit}
         />
         <CustomButton
           text="Agregar Unidad"
