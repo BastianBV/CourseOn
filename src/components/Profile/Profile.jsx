@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SettingsProfile from "../Buttons/SettingsProfile";
 import Avatar from "@mui/material/Avatar";
-import avatar from "../../assets/images/avatar.svg";
 import Tags from "../Profile/Tags/Tags";
 import { Outlet } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./profile.module.scss";
 import { getUserInfo } from "../../services/getInfo";
+import { Box } from "@mui/system";
 
 const Profile = () => {
   const [userInfo, setUserInfo] = useState();
@@ -25,15 +24,14 @@ const Profile = () => {
 
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+     <Box  sx={{display:'flex', flexDirection:'column', alingItems:'center'}}>
       <div className={styles.settingButton}>
         <SettingsProfile />
       </div>
 
       <div>
-        <Avatar src={avatar} sx={{ width: 90, height: 90 }} />
+        <Avatar  sx={{ width: 90, height: 90 }} />
+        
         <h2>{}</h2>
       </div>
 
@@ -50,6 +48,7 @@ const Profile = () => {
         </div>
       </div>
       <h1>Proximos vencimientos</h1>
+     </Box>
       <Outlet />
     </>
   );

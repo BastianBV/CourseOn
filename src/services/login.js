@@ -1,5 +1,7 @@
+import { URL_API } from '../services/base'
+
 export const loginAccount = async (email, password) => {
-  const response = await fetch("http://localhost:8080/auth/login", {
+  const response = await fetch(`${URL_API}/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
