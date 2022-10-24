@@ -90,6 +90,7 @@ const CreateCourse = () => {
       />
       <DropImage onChange={imageChange} ImagePrevious={ImageStates} />
 
+        <form>
       <Box>
         <Paper
           elevation={3}
@@ -105,16 +106,17 @@ const CreateCourse = () => {
         >
           <Grid container spacing={5} columns={16}>
             <Grid>
-              <CustomInput text="Nombre del curso" type="text" name={"title"} />
+              <CustomInput text="Nombre del curso" type="text" name={"title"} onChange={handleChange} />
             </Grid>
             <Grid>
-              <CustomInput text="Introduccion" type="text" name={"course"} />
+              <CustomInput text="Introduccion" type="text" name={"course"} onChange={handleChange} />
             </Grid>
             <Grid>
               <CustomInput
                 text="Descripcion del curso"
                 type="text"
                 name={"unitName"}
+                onChange={handleChange}
                 style={{ height: 200, maxWidth: 276, minWidth: 186 }}
               />
             </Grid>
@@ -123,6 +125,7 @@ const CreateCourse = () => {
                 text="Unidad"
                 type="text"
                 name={"unitCourse"}
+                onChange={handleChange}
                 style={{ top: -399, left: 439 }}
               />
             </Grid>
@@ -162,6 +165,7 @@ const CreateCourse = () => {
           className="buttonGoogle"
         />
       </div>
+        </form>
     </>
   );
 };
