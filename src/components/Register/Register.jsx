@@ -40,6 +40,7 @@ const Register = () => {
         elevation={3}
         sx={{ background: "#282c34", height: 350, p: 5, opacity: 0.5 }}
       >
+        <form>
         <CustomInput text="Nombre" type="text" name={"name"} onChange={handleChange} />
         <CustomInput text="Correo" type="text" name={"email"} onChange={handleChange} />
         <CustomInput
@@ -60,6 +61,7 @@ const Register = () => {
           className="buttonMicrosoft"
           onClick={handleSubmit}
         />
+        </form>
       </Paper>
       </Box>
 

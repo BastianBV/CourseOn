@@ -4,7 +4,15 @@ import Box from "@mui/material/Box";
 import { grey } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import styles from "../Inputs/inputs.module.scss";
-const CustomInput = ({ text, type, onChange, name, style, placeholder }) => {
+const CustomInput = ({
+  text,
+  type,
+  onChange,
+  name,
+  style,
+  placeholder,
+  value,
+}) => {
   // const CssTextField = styled(TextField)({
   //   '& label.Mui-focused': {
   //     color: 'white',
@@ -37,13 +45,12 @@ const CustomInput = ({ text, type, onChange, name, style, placeholder }) => {
         required="required"
         type={type}
         name={name}
+        value={value}
         style={style}
         autoComplete="off"
         className={`${styles.inputEf}`}
       />
-      <label className={`${styles.userLabel}`}>
-        {text}
-      </label>
+      <label className={`${styles.userLabel}`}>{text}</label>
     </div>
   );
 };
