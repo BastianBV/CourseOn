@@ -19,7 +19,7 @@ const LoginApp = () => {
 
       if (!result.success) setError("Error al iniciar Sesión");
 
-      localStorage.setItem("token", result.data.token);
+      localStorage.setItem("userTok", result.token);
       navigate("/");
     } catch (error) {
       console.log("error", error);
@@ -40,8 +40,12 @@ const LoginApp = () => {
         elevation={3}
         sx={{ background: "#282c34", height: 300, p: 5, opacity: 0.5 }}
       >
-        <CustomInput text="Correo" name={"email"}  onChange={handleChange} />
-        <CustomInput text="Contraseña" name={"password"} onChange={handleChange} />
+        <CustomInput text="Correo" name={"email"} onChange={handleChange} />
+        <CustomInput
+          text="Contraseña"
+          name={"password"}
+          onChange={handleChange}
+        />
         <CustomButton
           text="Inicia Sesión"
           className="buttonSesion"
@@ -50,7 +54,6 @@ const LoginApp = () => {
         />
       </Paper>
     </form>
-    
   );
 };
 
