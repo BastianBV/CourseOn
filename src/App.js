@@ -24,11 +24,14 @@ function App() {
           <Route path="/loginApp" element={<LoginApp />} />
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:userId" element={<Profile />} />
             <Route path="/settings" element={<EditProfile />} />
             <Route path="/createCourse" element={<CreateCourse />} />
             <Route path="/forms" element={<Forms />} />
-            <Route path="/coursePreviews" element={<CoursePreview />} />
+            <Route
+              path="/coursePreviews/:courseId"
+              element={<CoursePreview />}
+            />
             <Route path="/courseTest" element={<CourseTest />} />
             <Route path="/courseExam" element={<CourseExam />} />
           </Route>

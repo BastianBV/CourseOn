@@ -1,5 +1,5 @@
-import { React, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { React, useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import CustomButton from "../Buttons/CustomButton";
 import { Box } from "@mui/system";
 import Paper from "@mui/material/Paper";
@@ -7,10 +7,27 @@ import Typography from "@mui/material/Typography";
 import styles from "./CoursePreviews.module.scss";
 import Title from "./Title/Title";
 import SubTitle from "./Title/SubTitle";
+import { useParams } from "react-router-dom";
+import { getCourseInfo } from "../../services/getInfo";
+
 const CoursePreview = () => {
+  const { courseId } = useParams();
+  console.log(courseId);
+  const [course, setCourse] = useState();
+
+  useEffect(() => {
+    const getCourse = async () => {
+      return getCourseInfo(courseId);
+    };
+    getCourse().then((result) => {
+      console.log("result", result);
+      setCourse(result.courseById);
+    });
+  }, []);
+
   return (
     <>
-      <Title text="Programación para Videojuegos" />
+      <Title text={course.title} />
       <SubTitle text="Unidad 1: Introducción" />
       <Box
         sx={{

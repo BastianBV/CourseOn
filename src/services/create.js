@@ -10,7 +10,7 @@ export const createCourse = async (data, token) => {
     body: JSON.stringify(data),
   });
   const responseData = await response.json();
-  return responseData.user;
+  return responseData;
 };
 
 export const updtaeCourse = async (id, data) => {
