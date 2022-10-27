@@ -9,8 +9,7 @@ import DropImage from "../Dropzone/DropImage";
 import DropFile from "../Dropzone/DropFile";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
-import ModalUrl from '../Modal/ModalUrl'
-import { create } from '../../services/create'
+import { create } from "../../services/create";
 
 const CreateCourse = () => {
   const [ImagePrevious, setImagesPrevious] = useState(null);
@@ -20,22 +19,22 @@ const CreateCourse = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      const result = await create(values.title, values.course , values.unitName);
-      console.log("createAccount", result);
+    try {
+      const result = await create(values.title, values.course, values.unitName);
+      console.log("create", result);
       if (!result) setError("Error al crear contenido");
-      navigate("/");
-    }catch(error){
-      console.log(error)
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
   const handleChange = (e) => {
-    setValues({...values, [e.target.name]: e.target.values });
-  }
+    setValues({ ...values, [e.target.name]: e.target.values });
+  };
   const imageChange = (e) => {
-    const reader = new FileReader();
+    const reader = new FileReader();  
     reader.readAsDataURL(e.target.files[0]);
     reader.onload = (e) => {
       e.preventDefault();
@@ -60,10 +59,11 @@ const CreateCourse = () => {
   };
   return (
     <>
+    <Box>
       <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
         Agrega una imagen para tu banner
       </Typography>
-     
+
       <Avatar
         src={ImagePrevious}
         sx={{
@@ -73,11 +73,15 @@ const CreateCourse = () => {
           "@media (min-width: 768px)": { width: 759, height: 250, top: 0 },
         }}
       />
-      <DropImage onChange={changeImage} ImagePrevious={ImagePrevious} name='bannerImage'/>
+      <DropImage
+        onChange={changeImage}
+        ImagePrevious={ImagePrevious}
+        name="bannerImage"
+      />
       <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
         Agrega una imagen para tu miniatura
       </Typography>
-     
+
       <Avatar
         src={ImageStates}
         sx={{
@@ -90,82 +94,93 @@ const CreateCourse = () => {
       />
       <DropImage onChange={imageChange} ImagePrevious={ImageStates} />
 
-        <form>
-      <Box>
-        <Paper
-          elevation={3}
-          sx={{
-            background: "#282c34",
-            height: 400,
-            mt: 3,
-            p: 5,
-            opacity: 0.5,
-            width: 800,
-            "@media (max-width:768px)": { width: 222 ,height:600},
-          }}
-        >
-          <Grid container spacing={5} columns={16}>
-            <Grid>
-              <CustomInput text="Nombre del curso" type="text" name={"title"} onChange={handleChange} />
+      <form>
+        <Box>
+          <Paper
+            elevation={3}
+            sx={{
+              background: "#282c34",
+              height: 400,
+              mt: 3,
+              p: 5,
+              opacity: 0.5,
+              width: 800,
+              "@media (max-width:768px)": { width: 222, height: 600 },
+            }}
+          >
+            <Grid container spacing={5} columns={16}>
+              <Grid>
+                <CustomInput
+                  text="Nombre del curso"
+                  type="text"
+                  name={"title"}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid>
+                <CustomInput
+                  text="Introduccion"
+                  type="text"
+                  name={"course"}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid>
+                <CustomInput
+                  text="Descripcion del curso"
+                  type="text"
+                  name={"unitName"}
+                  onChange={handleChange}
+                  style={{ height: 200, maxWidth: 276, minWidth: 186 }}
+                />
+              </Grid>
+              <Grid lg={8}>
+                <CustomInput
+                  text="Unidad"
+                  type="text"
+                  name={"unitCourse"}
+                  onChange={handleChange}
+                  style={{ top: -399, left: 439 }}
+                />
+              </Grid>
             </Grid>
-            <Grid>
-              <CustomInput text="Introduccion" type="text" name={"course"} onChange={handleChange} />
-            </Grid>
-            <Grid>
-              <CustomInput
-                text="Descripcion del curso"
-                type="text"
-                name={"unitName"}
-                onChange={handleChange}
-                style={{ height: 200, maxWidth: 276, minWidth: 186 }}
-              />
-            </Grid>
-            <Grid lg={8}>
-              <CustomInput
-                text="Unidad"
-                type="text"
-                name={"unitCourse"}
-                onChange={handleChange}
-                style={{ top: -399, left: 439 }}
-              />
-            </Grid>
-          </Grid>
-        </Paper>
+          </Paper>
+        </Box>
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+          <Typography>Contenido de unidad</Typography>
+          <Paper
+            elevation={3}
+            sx={{
+              background: "#282c34",
+              height: 60,
+              mt: 3,
+              p: 5,
+              opacity: 0.5,
+              width: 400,
+              display: "flex",
+              jsutifyContent: "center",
+              "@media (max-width:768px)": { width: 222 },
+            }}
+          >
+            <DropFile onChange={fileUpload} FilesStates={FilesStates} />
+            {/* <ModalUrl/> */}
+          </Paper>
+        </Box>
+        <div>
+          <CustomButton
+            text="Guardar Cambios"
+            type="submit"
+            className="buttonGoogle"
+            onChange={handleSubmit}
+          />
+          <CustomButton
+            text="Agregar Unidad"
+            type="button"
+            className="buttonGoogle"
+          />
+        </div>
+      </form>
       </Box>
-      <Box>
-        <Typography>Contenido de unidad</Typography>
-        <Paper
-          elevation={3}
-          sx={{
-            background: "#282c34",
-            height: 60,
-            mt: 3,
-            p: 5,
-            opacity: 0.5,
-            width: 400,
-            display:'flex',
-            jsutifyContent:'center',
-            "@media (max-width:768px)": { width: 222 },
-          }}
-        >
-          <DropFile onChange={fileUpload} FilesStates={FilesStates} />
-          {/* <ModalUrl/> */}
-        </Paper>
-      </Box>
-      <div>
-        <CustomButton
-          text="Guardar Cambios"
-          type="submit"
-          className="buttonGoogle"
-          onChange={handleSubmit}
-        />
-        <CustomButton
-          text="Agregar Unidad"
-          type="button"
-          className="buttonGoogle"
-        />
-      </div>
-        </form>
     </>
   );
 };
