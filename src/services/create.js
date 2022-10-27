@@ -1,17 +1,17 @@
-import { URL_API } from '../services/base'
+import { URL_API } from "../services/base";
 
-export const create = async (data,token) => {
-    const response = await fetch(`${URL_API}/courses`, {
-        method:'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization:`Bearer ${token}`
-        },
-        body: JSON.stringify(data)
-    })
-    const responseData = await response.json();
-    return responseData.user;
-}
+export const createCourse = async (data, token) => {
+  const response = await fetch(`${URL_API}/courses`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      userTok: `${token}`,
+    },
+    body: JSON.stringify(data),
+  });
+  const responseData = await response.json();
+  return responseData.user;
+};
 
 export const updtaeCourse = async (id, data) => {
   const response = await fetch(`${URL_API}/courses/${id}`, {
@@ -22,4 +22,35 @@ export const updtaeCourse = async (id, data) => {
 
   const responseData = await response.json();
   return responseData.user;
+};
+
+export const getCourse = async () => {
+  const response = await fetch("http://localhost:8080/courses/");
+  const data = await response.json();
+  return data.posts;
+};
+
+export const getCourseId = async (id) => {
+  const response = await fetch(`http://localhost:8080/courses/${id}`);
+  const data = await response.json();
+  return data.posts;
+};
+
+export const getPost = async () => {
+  const response = await fetch("http://localhost:8080/courses/");
+  const data = await response.json();
+  return data.posts;
+};
+
+export const eraseCourse = async (id, token) => {
+  const response = await fetch(`http://localhost:8080/courses/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const responseData = await response.json();
+  return responseData;
 };
