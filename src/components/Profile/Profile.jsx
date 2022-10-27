@@ -24,7 +24,7 @@ const Profile = () => {
 
   return (
     <>
-     <Box  sx={{display:'flex', flexDirection:'column', alingItems:'center'}}>
+     <Box  sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
       <div className={styles.settingButton}>
         <SettingsProfile />
       </div>
