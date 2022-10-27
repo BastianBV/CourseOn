@@ -32,7 +32,7 @@ const Profile = () => {
       <div>
         <Avatar  sx={{ width: 90, height: 90 }} />
         
-        <h2>{}</h2>
+        <h2>{userInfo}</h2>
       </div>
 
       <Tags />

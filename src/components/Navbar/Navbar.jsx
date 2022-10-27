@@ -36,7 +36,9 @@ const Navbar = () => {
         <InputSearch/>
         <Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Typography sx={{ minWidth: 100 }}>About</Typography>
+      <Link to='/createCourse'>
+        <Typography sx={{ minWidth: 100 }}>Crea un curso</Typography>
+        </Link>
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}
@@ -46,7 +48,7 @@ const Navbar = () => {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
+            <Avatar sx={{ width: 32, height: 32 }}/>
           </IconButton>
         </Tooltip>
       </Box>

@@ -9,37 +9,20 @@ import DropImage from "../Dropzone/DropImage";
 import DropFile from "../Dropzone/DropFile";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
-<<<<<<< HEAD
-import { create } from "../../services/create";
-=======
-import ModalUrl from "../Modal/ModalUrl";
 import { createCourse } from "../../services/create";
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
+import { Outlet } from "react-router-dom";
 
-const initialValues = {
-  course: "",
-  title: "",
-  unitCourse: "",
-  unitName: "",
-};
+
 const CreateCourse = () => {
   const [ImagePrevious, setImagesPrevious] = useState(null);
   const [ImageStates, setImageStates] = useState(null);
   const [FilesStates, setFilesStates] = useState(null);
-  const [values, setValues] = useState(initialValues);
+  const [values, setValues] = useState();
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
-    try {
-      const result = await create(values.title, values.course, values.unitName);
-      console.log("create", result);
-      if (!result) setError("Error al crear contenido");
-      navigate("/profile");
-=======
-    console.log("values", values);
     try {
       const result = await createCourse(
         values,
@@ -47,18 +30,13 @@ const CreateCourse = () => {
       );
       console.log("createAccount", result);
       if (!result) setError("Error al crear contenido");
-      // navigate("/");
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
   const handleChange = (e) => {
-<<<<<<< HEAD
-    setValues({ ...values, [e.target.name]: e.target.values });
-=======
     setValues({ ...values, [e.target.name]: e.target.value });
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
   };
   const imageChange = (e) => {
     const reader = new FileReader();  
@@ -86,7 +64,7 @@ const CreateCourse = () => {
   };
   return (
     <>
-    <Box>
+    <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', mt:10}}>
       <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
         Agrega una imagen para tu banner
       </Typography>
@@ -131,7 +109,7 @@ const CreateCourse = () => {
               mt: 3,
               p: 5,
               opacity: 0.5,
-              width: 800,
+              width: 660,
               "@media (max-width:768px)": { width: 222, height: 600 },
             }}
           >
@@ -141,10 +119,6 @@ const CreateCourse = () => {
                   text="Nombre del curso"
                   type="text"
                   name={"title"}
-<<<<<<< HEAD
-=======
-                  value={values?.title}
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
                   onChange={handleChange}
                 />
               </Grid>
@@ -153,10 +127,6 @@ const CreateCourse = () => {
                   text="Introduccion"
                   type="text"
                   name={"course"}
-<<<<<<< HEAD
-=======
-                  value={values?.course}
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
                   onChange={handleChange}
                 />
               </Grid>
@@ -165,10 +135,6 @@ const CreateCourse = () => {
                   text="Descripcion del curso"
                   type="text"
                   name={"unitName"}
-<<<<<<< HEAD
-=======
-                  value={values?.unitName}
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
                   onChange={handleChange}
                   style={{ height: 200, maxWidth: 276, minWidth: 186 }}
                 />
@@ -178,10 +144,7 @@ const CreateCourse = () => {
                   text="Unidad"
                   type="text"
                   name={"unitCourse"}
-<<<<<<< HEAD
-=======
                   value={values?.unitCourse}
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
                   onChange={handleChange}
                   style={{ top: -399, left: 439 }}
                 />
@@ -189,11 +152,7 @@ const CreateCourse = () => {
             </Grid>
           </Paper>
         </Box>
-<<<<<<< HEAD
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-=======
-        <Box>
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
           <Typography>Contenido de unidad</Typography>
           <Paper
             elevation={3}
@@ -218,23 +177,13 @@ const CreateCourse = () => {
             text="Guardar Cambios"
             type="submit"
             className="buttonGoogle"
-<<<<<<< HEAD
-            onChange={handleSubmit}
-=======
             onClick={handleSubmit}
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
-          />
-          <CustomButton
-            text="Agregar Unidad"
-            type="button"
-            className="buttonGoogle"
+            style={{width:400}}
           />
         </div>
       </form>
-<<<<<<< HEAD
       </Box>
-=======
->>>>>>> adf02ae38a64d6ae338c47e2af04cd0a7764cf0e
+      <Outlet/>
     </>
   );
 };

@@ -8,9 +8,20 @@ import styles from "./CoursePreviews.module.scss";
 import Title from "./Title/Title";
 import SubTitle from "./Title/SubTitle";
 const CoursePreview = () => {
+  // const [courseInfo, setCourseInfo] = useState();
+
+  // useEffect(() => {
+  //   const fetchCourse = async () => {
+  //     const course = await getCourseInfo();
+  //     setCourseInfo(course.data.name)
+  //     console.log(course);
+  //   };
+  //   fetchUser();
+  // }, []);
   return (
     <>
-      <Title text="Programación para Videojuegos" />
+      {/* <Title text={courseInfo}/> */}
+
       <SubTitle text="Unidad 1: Introducción" />
       <Box
         sx={{
