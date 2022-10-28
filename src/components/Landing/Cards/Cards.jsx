@@ -49,7 +49,7 @@ const bull = (
 const Cards = () => {
   return (
     <div >
-      <Grid container sx={{p:20, mb:50}}>
+      <Grid container spacing={5} sx={{p:20, pt:0, mb:50}}>
         <Grid item xs={12} sm={6} md={6}>
           <StyledCard sx={{maxWidth:400, maxHeight:250, mt:10, '@media (max-width: 768px)':{width:300, height:200, ml:1, mt:3} }}>   
         <Card

@@ -36,8 +36,8 @@ const Navbar = () => {
         <InputSearch/>
         <Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-      <Link to='/createCourse'>
-        <Typography sx={{ minWidth: 100 }}>Crea un curso</Typography>
+      <Link to='/createCourse' style={{textDecoration:'none'}}>
+        <Typography sx={{ minWidth: 100, color:'white' }}>Crea un curso</Typography>
         </Link>
         <Tooltip title="Account settings">
           <IconButton
