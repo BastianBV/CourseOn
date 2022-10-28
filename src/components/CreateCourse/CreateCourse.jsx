@@ -22,6 +22,8 @@ const CreateCourse = () => {
   const [ImagePrevious, setImagesPrevious] = useState(null);
   const [ImageStates, setImageStates] = useState(null);
   const [FilesStates, setFilesStates] = useState(null);
+  const [imagePreview, setImagePreviewFile] = useState();
+  const [imageBanner, setBannerPreviewFile] = useState();
   const [values, setValues] = useState(initialValues);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -29,8 +31,15 @@ const CreateCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("values", values);
+
+    const data = {
+      imgBanner: imageBanner,
+      imgMinature: imagePreview,
+    };
+    console.log("data", data);
     try {
       const result = await createCourse(
+        data,
         values,
         localStorage.getItem("userTok")
       );
@@ -45,6 +54,8 @@ const CreateCourse = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   const imageChange = (e) => {
+    setBannerPreviewFile(e.target.files[0]);
+
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload = (e) => {
@@ -53,6 +64,7 @@ const CreateCourse = () => {
     };
   };
   const changeImage = (e) => {
+    setImagePreviewFile(e.target.files[0]);
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload = (e) => {

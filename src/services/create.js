@@ -1,13 +1,16 @@
 import { URL_API } from "../services/base";
 
-export const createCourse = async (data, token) => {
+export const createCourse = async (data, values, token) => {
+  const formData = new FormData();
+  formData.append("Image", data.imgBanner);
+  formData.append("Image", data.imgMinature);
+  formData.append("title", values.title);
   const response = await fetch(`${URL_API}/courses`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
       userTok: `${token}`,
     },
-    body: JSON.stringify(data),
+    body: formData,
   });
   const responseData = await response.json();
   return responseData;

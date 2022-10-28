@@ -13,7 +13,7 @@ import { getCourseInfo } from "../../services/getInfo";
 const CoursePreview = () => {
   const { courseId } = useParams();
   console.log(courseId);
-  const [course, setCourse] = useState();
+  const [course, setCourse] = useState({});
 
   useEffect(() => {
     const getCourse = async () => {
@@ -25,6 +25,9 @@ const CoursePreview = () => {
     });
   }, []);
 
+  if (!course) {
+    return;
+  }
   return (
     <>
       <Title text={course.title} />
