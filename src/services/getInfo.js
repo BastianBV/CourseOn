@@ -1,8 +1,13 @@
-import { URL_API } from '../services/base'
+import { URL_API } from "../services/base";
 
 export const getUserInfo = async () => {
   const response = await fetch(`${URL_API}/auth/user`, {
     headers: { userTok: localStorage.getItem("token") },
   });
+  return await response.json();
+};
+
+export const getCourseInfo = async (courseId) => {
+  const response = await fetch(`${URL_API}/courses/${courseId}`);
   return await response.json();
 };
