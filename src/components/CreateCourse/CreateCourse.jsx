@@ -15,7 +15,7 @@ import { createCourse } from "../../services/create";
 const initialValues = {
   course: "",
   title: "",
-  unitCourse: "",
+  description: "",
   unitName: "",
 };
 const CreateCourse = () => {
@@ -141,7 +141,7 @@ const CreateCourse = () => {
                     onChange={handleChange}
                   />
                 </Grid>
-                <Grid>
+                {/* <Grid>
                   <CustomInput
                     text="Introduccion"
                     type="text"
@@ -149,18 +149,18 @@ const CreateCourse = () => {
                     value={values?.course}
                     onChange={handleChange}
                   />
-                </Grid>
+                </Grid> */}
                 <Grid>
                   <CustomInput
                     text="Descripcion del curso"
                     type="text"
-                    name={"unitName"}
-                    value={values?.unitName}
+                    name={"description"}
+                    value={values?.description}
                     onChange={handleChange}
                     style={{ height: 200, maxWidth: 276, minWidth: 186 }}
                   />
                 </Grid>
-                <Grid lg={8}>
+                {/* <Grid lg={8}>
                   <CustomInput
                     text="Unidad"
                     type="text"
@@ -169,7 +169,7 @@ const CreateCourse = () => {
                     onChange={handleChange}
                     style={{ top: -399, left: 439 }}
                   />
-                </Grid>
+                </Grid> */}
               </Grid>
             </Paper>
           </Box>
@@ -206,11 +206,11 @@ const CreateCourse = () => {
               className="buttonGoogle"
               onClick={handleSubmit}
             />
-            <CustomButton
+            {/* <CustomButton
               text="Agregar Unidad"
               type="button"
               className="buttonGoogle"
-            />
+            /> */}
           </div>
         </form>
       </Box>

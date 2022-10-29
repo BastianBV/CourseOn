@@ -5,6 +5,7 @@ export const createCourse = async (data, values, token) => {
   formData.append("Image", data.imgBanner);
   formData.append("Image", data.imgMinature);
   formData.append("title", values.title);
+  formData.append("description", values.description);
   const response = await fetch(`${URL_API}/courses`, {
     method: "POST",
     headers: {

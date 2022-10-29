@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SettingsProfile from "../Buttons/SettingsProfile";
 import Avatar from "@mui/material/Avatar";
 import Tags from "../Profile/Tags/Tags";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./profile.module.scss";
@@ -10,18 +10,23 @@ import { getUserInfo } from "../../services/getInfo";
 import { Box } from "@mui/system";
 
 const Profile = () => {
-  const [userInfo, setUserInfo] = useState();
+  const { userId } = useParams();
+  console.log(userId);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const user = await getUserInfo();
-      // setUserInfo(user.data.name)
-      console.log(user);
+    const getuser = async () => {
+      return getUserInfo(userId);
     };
-    fetchUser().then((result) => {
-      // setUserInfo(result.)
+    getuser().then((result) => {
+      setUser(result.user);
     });
   }, []);
+
+  if (!user) {
+    return "cargando...";
+  }
+
   const percentage = 66;
 
   return (
@@ -36,7 +41,7 @@ const Profile = () => {
         <div>
           <Avatar sx={{ width: 90, height: 90 }} />
 
-          <h2>{}</h2>
+          <h2>{user.name}</h2>
         </div>
 
         <Tags />

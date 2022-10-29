@@ -1,9 +1,7 @@
 import { URL_API } from "../services/base";
 
-export const getUserInfo = async () => {
-  const response = await fetch(`${URL_API}/auth/user`, {
-    headers: { userTok: localStorage.getItem("token") },
-  });
+export const getUserInfo = async (userId) => {
+  const response = await fetch(`${URL_API}/users/${userId}`);
   return await response.json();
 };
 

@@ -18,7 +18,7 @@ const LoginApp = () => {
       const result = await loginAccount(values.email, values.password);
 
       if (!result.success) setError("Error al iniciar Sesión");
-
+      localStorage.setItem("userId", result.user.id);
       localStorage.setItem("userTok", result.token);
       navigate("/");
     } catch (error) {
