@@ -1,0 +1,41 @@
+.wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    position:relative;
+    color:#fff;
+  }
+  .typeWrap{
+  
+    animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+  }
+  .line{
+      // position:relative;
+    width: 11em;
+    margin:auto;
+    border-right: 2px solid #4AD06F;
+    font-size: 60px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(10%);
+  }
+  @keyframes typewriter {
+    from{
+      width: 0;
+    }
+    to{
+      width: 11em;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from{
+      border-right-color: #4AD06F;
+    }
+    to{
+      border-right:transparent;
+      
+    }
+  }
+  //! Landing Effect Letter slash
+  
+  

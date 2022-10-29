@@ -20,7 +20,6 @@ const CoursePreview = () => {
       return getCourseInfo(courseId);
     };
     getCourse().then((result) => {
-      console.log("result", result);
       setCourse(result.courseById);
     });
   }, []);
@@ -31,7 +30,7 @@ const CoursePreview = () => {
   return (
     <>
       <Title text={course.title} />
-      <SubTitle text="Unidad 1: Introducción" />
+      <SubTitle text="" />
       <Box
         sx={{
           display: "flex",
@@ -43,19 +42,17 @@ const CoursePreview = () => {
           elevation={3}
           sx={{
             background: "#282c34",
-            height: 300,
+            height: 380,
             mt: 3,
-            p: 5,
+            p: 2,
             opacity: 0.5,
             width: 600,
             "@media (max-width:768px)": { width: 222, height: 600 },
           }}
         >
+          <img style={{ width: 500, height: 200 }} src={course.imgMinature} />
           <Typography sx={{ fontSize: 15 }} color="white" gutterBottom>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Temporibus, cum eum? Aperiam praesentium, laudantium accusamus,
-            adipisci perferendis saepe expedita voluptates exercitationem ea
-            dolorem possimus inventore consequuntur quam iusto quo est.
+            {course.description}
           </Typography>
         </Paper>
       </Box>
