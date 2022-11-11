@@ -13,6 +13,7 @@ import EditProfile from "./components/Forms/EditProfile";
 import CoursePreview from "./components/CoursePreviews/CoursePreviews";
 import CourseTest from "./components/CourseTest/CourseTest";
 import CourseExam from "./components/CourseExam/CourseExam";
+import Quiz2 from './components/CourseExam/Quiz2'
 function App() {
   return (
     <div className="App">
@@ -35,6 +36,7 @@ function App() {
             <Route path="/courseTest" element={<CourseTest />} />
             <Route path="/courseExam" element={<CourseExam />} />
           </Route>
+            <Route path="/test" element={<Quiz2 />} />
         </Routes>
       </BrowserRouter>
     </div>
