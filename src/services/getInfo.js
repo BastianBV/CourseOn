@@ -9,3 +9,8 @@ export const getCourseInfo = async (courseId) => {
   const response = await fetch(`${URL_API}/courses/${courseId}`);
   return await response.json();
 };
+
+export const getAllCourseInfo = async () => {
+  const response = await fetch(`${URL_API}/courses`);
+  return await response.json();
+};
