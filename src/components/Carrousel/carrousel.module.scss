@@ -1,5 +1,6 @@
 .conteiner{
     width:100%;
+    margin-top: 20px;
 }
 
 .carrousel{
@@ -21,11 +22,13 @@
 .card {
     scroll-snap-align: start;
     border-radius: 30px;
-    min-height: 200px;
-    min-width: 300px;
+    min-height: 300px;
+    min-width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px;
+    
 }
 
 

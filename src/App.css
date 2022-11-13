@@ -17,6 +17,7 @@
   animation-iteration-count: infinite;
   animation-name: gradients;
   font-family: sans-serif;
+  margin-top:10px,
 }
 @keyframes gradients {
   0%   {background-position: 0 0;}
