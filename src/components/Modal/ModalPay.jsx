@@ -1,7 +1,9 @@
 import { Button, Modal, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router";
 import styles from "./Modal.module.scss";
 function ModalSubs({ modal, setModal, modalClose }) {
+  const navigate = useNavigate();
   const modalBody = (
     <div className={styles.modal}>
       <div align="center">
@@ -25,7 +27,9 @@ function ModalSubs({ modal, setModal, modalClose }) {
         ></TextField>
         <br />
       </div> */}
-      <Button color="primary">Pagar</Button>
+      <Button onClick={() => navigate("/courseTake")} color="primary">
+        Pagar
+      </Button>
       <Button onClick={modalClose} color="primary">
         Cancelar
       </Button>

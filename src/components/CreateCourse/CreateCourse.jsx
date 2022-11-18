@@ -30,13 +30,12 @@ const CreateCourse = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("values", values);
 
     const data = {
       imgBanner: imageBanner,
       imgMinature: imagePreview,
     };
-    console.log("data", data);
+
     try {
       const result = await createCourse(
         data,
@@ -206,11 +205,12 @@ const CreateCourse = () => {
               className="buttonGoogle"
               onClick={handleSubmit}
             />
-            {/* <CustomButton
-              text="Agregar Unidad"
+            <CustomButton
+              text="Agregar Formulario"
               type="button"
               className="buttonGoogle"
-            /> */}
+              onClick={() => navigate("/forms")}
+            />
           </div>
         </form>
       </Box>

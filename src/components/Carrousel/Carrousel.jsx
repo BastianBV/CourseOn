@@ -32,76 +32,24 @@ const Carrousel = () => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 1024, min: 720 },
+      breakpoint: { max: 3000, min: 1024 },
       items: 3,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 720, min: 320 },
+      breakpoint: { max: 1024, min: 464 },
       items: 2,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
-      breakpoint: { max: 320, min: 0 },
+      breakpoint: { max: 464, min: 0 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  // const handleNext = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  // };
 
-  // const handleBack = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  // };
-  // const card = [{
-  //     imgPath:'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60'
-  // }]
-  // const maxSteps = card.length;
   return (
     <div className={`${styles.conteiner}`}>
-      {/* {course.length && (
-        <MobileStepper
-          variant="dots"
-          steps={course.length}
-          position="static"
-          activeStep={activeStep}
-          sx={{
-            maxWidth: 2560,
-            minWidth: 320,
-            flexGrow: 1,
-            padding: 0,
-            background: "none",
-          }}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === course?.length}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-            </Button>
-          }
-        />
-      )} */}
-
       <Carousel
         swipeable={false}
         draggable={false}
