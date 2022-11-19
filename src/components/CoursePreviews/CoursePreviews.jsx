@@ -14,7 +14,7 @@ import ModalSubs from "../Modal/ModalPay";
 
 const CoursePreview = () => {
   const { courseId } = useParams();
-  console.log(courseId);
+
   const [course, setCourse] = useState({});
   const [modal, setModal] = useState(false);
   useEffect(() => {
@@ -60,6 +60,7 @@ const CoursePreview = () => {
       </Box>
 
       <div>
+     
         <CustomButton
           className={"buttonSesion"}
           style={{ width: 400, marginBottom: 60 }}
@@ -67,7 +68,7 @@ const CoursePreview = () => {
           type="submit"
           onClick={() => setModal(true)}
         />
-        <ModalSubs modal={modal} modalClose={() => setModal(false)} />
+        <ModalSubs courseId={courseId} modal={modal} modalClose={() => setModal(false)} />
       </div>
     </>
   );
