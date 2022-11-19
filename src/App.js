@@ -29,8 +29,8 @@ function App() {
             <Route path="/profile/:userId" element={<Profile />} />
             <Route path="/settings" element={<EditProfile />} />
             <Route path="/createCourse" element={<CreateCourse />} />
-            <Route path="/forms" element={<Forms />} />
-            <Route path="/courseTake" element={<CourseTake />} />
+            <Route path="/forms/:courseId" element={<Forms />} />
+            <Route path="/courseTake/:courseId" element={<CourseTake />} />
             <Route
               path="/coursePreviews/:courseId"
               element={<CoursePreview />}

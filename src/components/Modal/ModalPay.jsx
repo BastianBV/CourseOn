@@ -2,7 +2,7 @@ import { Button, Modal, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 import styles from "./Modal.module.scss";
-function ModalSubs({ modal, setModal, modalClose }) {
+function ModalSubs({ modal, setModal, modalClose, courseId }) {
   const navigate = useNavigate();
   const modalBody = (
     <div className={styles.modal}>
@@ -10,24 +10,7 @@ function ModalSubs({ modal, setModal, modalClose }) {
         <h2>Tu aventura comienza</h2>
         <p>Listo para descubrir un nuevo conocimiento</p>
       </div>
-
-      {/* <div align="right">
-        <TextField label="Correo" className={styles.textfield}></TextField>
-        <br />
-        <TextField
-          label="Número de tarjeta"
-          className={styles.textfield}
-        ></TextField>
-        <br />
-        <TextField label="CV" className={styles.textfield}></TextField>
-        <br />
-        <TextField
-          label="Fecha de expiración"
-          className={styles.textfield}
-        ></TextField>
-        <br />
-      </div> */}
-      <Button onClick={() => navigate("/courseTake")} color="primary">
+      <Button onClick={() => navigate(`/courseTake/${courseId}`)} color="primary">
         Pagar
       </Button>
       <Button onClick={modalClose} color="primary">

@@ -44,7 +44,7 @@ const CreateCourse = () => {
       );
       console.log("createAccount", result);
       if (!result) setError("Error al crear contenido");
-      navigate(`/coursePreviews/${result.newCourse.id}`);
+      navigate(`/forms/${result.newCourse.id}`);
     } catch (error) {
       console.log(error);
     }

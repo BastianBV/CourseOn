@@ -45,7 +45,7 @@ const CourseTake = () => {
         }}
       >
         <Typography sx={{ fontSize: 15 }} color="white" gutterBottom>
-          {/* {course.description} */}
+          {course.description}
         </Typography>
       </Paper>
     </>
